@@ -10,5 +10,10 @@ pipeline {
       }
       }
     }
+    stage('Unit test maven') {
+      steps {
+        sh 'mvn test'        
+      }
+    }
         }
 }
