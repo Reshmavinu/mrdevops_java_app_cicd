@@ -10,9 +10,14 @@ pipeline {
       }
       }
     }
-    stage('Unit test maven') {
+     stage('build application') {
       steps {
-        script 'mvn test'        
+        sh 'mvn clean package'        
+      }
+    }
+     stage('Unit test maven') {
+      steps {
+        sh 'mvn test'        
       }
     }
         }
